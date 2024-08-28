@@ -1,0 +1,25 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+  .border-with-hover {
+    @apply border border-transparent hover:border hover:border-zinc-300 hover:rounded-[3px] cursor-pointer;
+  }
+
+  .form-input {
+    @apply border border-solid border-[#ccc] h-[32px] mb-2 p-2 shadow-sm inset-0 text-xs;
+  }
+
+  .btn {
+    @apply w-full bg-btn text-white p-1 font-semibold rounded-sm;
+  }
+
+  .form-fields {
+    @apply w-full flex mb-4;
+  }
+
+  .form-fields > label {
+    @apply text-sm font-light inline-block mr-4 w-[150px] text-right;
+  }
+}
