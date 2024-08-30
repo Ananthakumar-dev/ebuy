@@ -1,73 +1,85 @@
-import Image from "next/image";
 import Link from "next/link";
 import {
   MagnifyingGlassIcon,
-  ShoppingCartIcon,
-  MapPinIcon,
+  GlobeAltIcon,
+  UserIcon,
+  Bars3Icon,
 } from "@heroicons/react/24/solid";
 
 const Header = () => {
   return (
-    <header className="bg-primary-color text-white flex items-center h-auto p-5 gap-3">
-      <div className="border-with-hover p-1">
-        <Link href="/">
-          <Image
-            src="/cliqbuy.webp"
-            alt="logo"
-            width={80}
-            height={80}
-            className="bg-transparent"
-            priority
-          />
+    <>
+      <header className="bg-header h-[80px] text-white flex justify-between  items-center p-4 gap-4">
+        <Link href="/" className="block h-full w-[210px]">
+          <div className="bg-[url('/images/logo.png')] h-full w-full bg-contain bg-no-repeat bg-center"></div>
         </Link>
-      </div>
-      <div className="flex items-center gap-[0.5rem] border-with-hover p-1">
-        <div className="">
-          <MapPinIcon className="size-4" />
-        </div>
-        <div className="">
-          <p className="text-sm font-extralight">
-            Delivering to Chennai 600028
-          </p>
-          <p className="text-base font-semibold">Update Location</p>
-        </div>
-      </div>
-      <form action="" className="w-[700px] flex">
-        <div className="flex-[0.95]">
-          <input
-            type="text"
-            name="header-search"
-            id="header-search"
-            placeholder="Search anything..."
-            className="p-2 w-full h-full rounded-md text-black"
-          />
-        </div>
 
-        <div className="flex-[0.05]">
-          <label htmlFor="search-submit" className="">
-            <MagnifyingGlassIcon className="size-6" />
-          </label>
+        <form
+          action=""
+          className="hidden md:flex items-center max-w-[600px] flex-grow"
+        >
           <input
-            type="submit"
-            name="submit"
-            id="search-submit"
-            className="opacity-0 invisible"
+            type="search"
+            name="search"
+            id="header-search"
+            placeholder="Search..."
+            className="hidden md:block py-[4px] px-2 rounded-l-lg shadow-inner text-black outline-none w-full"
           />
+          <label
+            htmlFor="header-search"
+            className="inline-block border border-l-0 rounded-r-lg px-2 py-0.5"
+          >
+            <button type="submit">
+              <MagnifyingGlassIcon className="size-5" />
+            </button>
+          </label>
+        </form>
+
+        <div className="flex items-center gap-5">
+          <div className="md:hidden">
+            <button type="button">
+              <MagnifyingGlassIcon className="size-6" />
+            </button>
+          </div>
+
+          <div className="md:flex gap-2 p-2 items-center cursor-pointer border border-transparent hover:border-gray-200 hover:rounded-lg">
+            <button type="button">
+              <GlobeAltIcon className="size-6" />
+            </button>
+
+            <p className="hidden md:block">English-USD</p>
+          </div>
+
+          <div className="md:flex gap-2 items-center p-2 cursor-pointer border border-transparent hover:border-gray-200 hover:rounded-lg">
+            <button type="button">
+              <UserIcon className="size-6" />
+            </button>
+
+            <p className="hidden md:block">Signin</p>
+          </div>
+
+          <div>
+            <button className="bg-btn py-1.5 px-6 rounded-2xl font-semibold text-sm whitespace-nowrap md:text-md">
+              Sign up
+            </button>
+          </div>
         </div>
-      </form>
-      <div className="p-1 border-with-hover">
-        <p className="font-normal text-sm">
-          Hello, <span>Sign in</span>
-        </p>
-        <p>Account & Lists</p>
-      </div>
-      <div className="p-1 border-with-hover">
-        <div className="p-1">
-          <ShoppingCartIcon className="size-8" />
-        </div>
-        <p>Cart</p>
-      </div>
-    </header>
+      </header>
+      <nav className="bg-header h-[30px] text-white flex justify-between  items-center px-4 py-6 gap-4 text-sm font-[500]">
+        <ul className="flex gap-4 items-center *:cursor-pointer">
+          <li className="flex items-center gap-1">
+            <Bars3Icon className="size-6" />
+            <span>All categories</span>
+          </li>
+          <li> Featured categories </li>
+          <li>Trade Assurance</li>
+        </ul>
+        <ul className="hidden md:flex gap-4 items-center *:cursor-pointer">
+          <li>Help Center</li>
+          <li>Become a Seller or Supplier</li>
+        </ul>
+      </nav>
+    </>
   );
 };
 

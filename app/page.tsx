@@ -5,7 +5,8 @@ import Hero from "@/app/(components)/home/Hero";
 export default function Home() {
   return (
     <main className="h-screen">
-      <Banner />
+      {/* <Banner />
+      <Hero /> */}
       <Hero />
     </main>
   );
