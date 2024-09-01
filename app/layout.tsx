@@ -21,7 +21,6 @@ export default function RootLayout({
       <body className={`${inter.className} max-w-screen-2xl`}>
         <Header />
         {children}
-        <Footer />
       </body>
     </html>
   );

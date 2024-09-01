@@ -65,7 +65,7 @@ const Header = () => {
           </div>
         </div>
       </header>
-      <nav className="bg-header h-[30px] text-white flex justify-between  items-center px-4 py-6 gap-4 text-sm font-[500]">
+      <nav className="bg-header max-h-[56px] text-white flex justify-between  items-center p-4 gap-4 text-sm font-[500]">
         <ul className="flex gap-4 items-center *:cursor-pointer">
           <li className="flex items-center gap-1">
             <Bars3Icon className="size-6" />
